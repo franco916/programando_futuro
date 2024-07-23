@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/estilebas.css">
+    <link rel="stylesheet" href="../css/formstyle.css">
+
+    <title>Formulario para Inscrição</title>
+</head>
+
+<body>
+
+  <header>
+
+    <nav>
+      <a class="logo" href="/"> Programando o Futuro</a>
+      
+      <div class="mobile-menu">
+        <div class="line1"></div>
+        <div class="line2"></div>
+        <div class="line3"></div>
+      </div>
+
+      <ul class="nav-list">
+        <li><a href="../index.html">Início</a></li>
+        <li><a href="projetos.html">Projetos</a></li>
+        <li><a href="contato.html">Quem Somos</a></li>
+      </ul>
+
+    </nav>
+  </header>
+  
+  <div class="box">
+        <div class="img-box">
+            <img src="../img/img-formulario.png">
+        </div>
+        <div class="form-box">
+            <h2>Inscreva-se aqui</h2>
+            <p>e participe do Projeto </p>
+            <form action="../php/php.php" method="post">
+                <div class="input-group">
+                    <label for="nome"> Nome da Instituição</label>
+                    <input type="text" name="namei" id="nome" placeholder="Digite o nome da sua Instituição" required>
+                </div>
+
+                <div class="input-group">
+                  <label for="institution-type">Tipo de Instituição</label>
+                  <select id="institution-type" name="inst" required>
+                      <center>
+                        <option value="Estadual">Estadual</option>
+                        <option value="Federal">Federal</option>
+                        <option value="Municipal">Municipal</option>
+                    </center>
+                  </select>
+              </div>
+
+                <div class="input-group">
+                  <label for="nome"> Nome do(a) Representante</label>
+                  <input type="text" name="namer" id="nome" placeholder="Digite o seu nome" required>
+              </div>
+
+                <div class="input-group">
+                    <label for="email">E-mail</label>
+                    <input type="email" name="email" id="email" placeholder="Digite um email para contato" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="telefone">Telefone</label>
+                    <input type="text" name="tel" id="telefone" placeholder="Digite o seu telefone" required>
+                </div>
+                
+                <div class="input-group">
+                  <label for="telefone">Observação e/ou Comentários</label>
+                  <input type="text" name="comen" id="comen">
+              </div>
+           
+                <div class="input-group">
+                  <center>
+                    <button id="enviar" type="submit" value="Enviar"><a href="../php/php.php" onclick="enviar()">Enviar</a></button>
+                  </center>
+                </div>
+
+            </form>
+        </div>
+    </div>
+    <script type="text/javascript">
+
+      function enviar(){
+        alert("Envio feito com sucesso!")
+      }
+
+
+
+
+
+
+    </script>
+</body>
+</html>

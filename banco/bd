@@ -1,0 +1,14 @@
+DROP DATABASE IF EXISTS bd;
+CREATE DATABASE bd;
+USE bd;
+
+CREATE TABLE escolas(
+    id_escola INT NOT NULL AUTO_INCREMENT,
+    nome_instituicao VARCHAR(75) NOT NULL,
+    nome_representante VARCHAR(75) NOT NULL,
+    email VARCHAR(75) NOT NULL UNIQUE,
+    telefone CHAR(11) NOT NULL UNIQUE,
+    tipo_instituicao ENUM("Estadual", "Municipal", "Federal"),
+    comentario TEXT NOT NULL,
+    PRIMARY KEY(id_escola)
+);

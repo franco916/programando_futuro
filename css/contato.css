@@ -1,0 +1,103 @@
+.body1{
+    background: -webkit-linear-gradient(left, #ffffff, #c6b3ec);
+    background: -moz-linear-gradient(left, #ffffff, #c6b3ec);
+    background: -ms-linear-gradient(left, #ffffff, #c6b3ec);
+    background: -o-linear-gradient(left, #ffffff, #c6b3ec);
+    background: linear-gradient(to right, #ffffff, #c6b3ec);
+}
+
+.body2{
+    background: -webkit-linear-gradient(left, #ffffff, #c6b3ec);
+    background: -moz-linear-gradient(left, #ffffff, #c6b3ec);
+    background: -ms-linear-gradient(left, #ffffff, #c6b3ec);
+    background: -o-linear-gradient(left, #ffffff, #c6b3ec);
+    background: linear-gradient(to right, #ffffff, #c6b3ec);
+}
+
+section.topo-do-site{
+    padding: 55px 4%;
+    
+}
+
+.flex{
+    display: flex;
+    gap: 60px;
+    text-align: justify;
+    font-size: 25px;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: justify;
+}
+
+section.topo-do-site .flex{
+    align-items: center;
+    justify-content: center;
+}
+
+.topo-do-site h1{
+    text-align:  center;
+    font-size:   50px;
+    padding-top: 5px;
+    font-family: system-ui, -apple-system, Helvetica, Arial, sans-serif;
+}
+
+.topo-do-site .txt-topo-site p{
+    text-align: justify;
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.img-topo-site{
+    width: 45%;
+    left: 50%;
+}
+
+.img-ifsp{
+    width: 300px;
+    align-items: center;
+    position: center;
+}
+
+/*//////////////////////////////////////////////*/
+
+section.topo-do-site2{
+    padding: 55px 4%;
+    
+}
+
+.flex2{
+    display: flex;
+    gap: 60px;
+    text-align: justify;
+    font-size: 25px;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: justify;
+}
+
+section.topo-do-site2 .flex2{
+    align-items: center;
+    justify-content: center;
+}
+
+.topo-do-site2 h1{
+    text-align:  center;
+    font-size:   50px;
+    padding-top: 5px;
+    font-family: system-ui, -apple-system, Helvetica, Arial, sans-serif;
+}
+
+.topo-do-site2 .txt-topo-site2 p{
+    text-align: justify;
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.img-topo-site2{
+    width: 45%;
+    left: 10%;
+}
+
+.img-ifsp2{
+    width: 300px;
+    align-items: center;
+    position: center;
+}
