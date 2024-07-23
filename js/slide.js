@@ -1,6 +1,10 @@
 var radio = document.querySelector('.manual-btn')
 var cont = 1
 
+let teste;
+
+
+
 document.getElementById('radio1').checked = true
 
 setInterval( () => {
