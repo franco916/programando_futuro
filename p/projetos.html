@@ -5,167 +5,119 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>Programando o Futuro</title>
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../css/style.css" />
-
-    <link rel="stylesheet" href="../css/slide.css" />
-
-    <link rel="stylesheet" href="../css/estilebas.css" />
-
-    <link rel="stylesheet" href="../css/card.css" />
-
     <link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
 
-    <script src="../js/slide.js" defer></script>
+    <style>
+        html, body {
+          height: 100%;
+          margin: 0;
+        }
+        body {
+          display: flex;
+          flex-direction: column;
+        }
+        header, main, footer {
+          flex-shrink: 0;
+        }
+        main {
+          flex-grow: 1;
+        }
+        .top-card {
+          margin-top: 20px; /* Adjust this value to your preference */
+        }
+        .fixed-footer {
+          background-color: #343a40;
+          color: white;
+          padding: 20px 0;
+          height: 200px;
+
+        }
+
+        .card-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Center vertically within the viewport */
+        }
+
+        .main-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Full viewport height */
+        }
+      </style>
+
 </head>
+
+<!--------------------------------------------------   Header -------------------------------------------------->
+
+<header>
+
+    <nav>
+      <a class="logo" href="/"> Programando o Futuro</a>
+
+      <div class="mobile-menu">
+        <div class="line1"></div>
+        <div class="line2"></div>
+        <div class="line3"></div>
+      </div>
+
+      <ul class="nav-list">
+        <li><a href="../index.html">Início</a></li>
+        <li><a href="contato.html">Quem Somos</a></li>
+        <li><a href="inscreva.html">Inscreva-se</a></li>
+      </ul>
+
+    </nav>
+
+</header>
+
+<!--------------------------------------------------   Body -------------------------------------------------->
+
+
 <body>
-    <header>
+    
 
-        <nav>
-          <a class="logo" href="/"> Programando o Futuro</a>
-  
-          <div class="mobile-menu">
-            <div class="line1"></div>
-            <div class="line2"></div>
-            <div class="line3"></div>
-          </div>
-  
-          <ul class="nav-list">
-            <li><a href="../index.html">Início</a></li>
-            <li><a href="contato.html">Quem Somos</a></li>
-            <li><a href="inscreva.html">Inscreva-se</a></li>
-          </ul>
-  
-        </nav>
-  
-      </header>
-      
-      <section class="slider">
-        <div class="slider-content">
+    
 
-          <input type="radio" name="btn-radio" id="radio1">
-          <input type="radio" name="btn-radio" id="radio2">
-          <input type="radio" name="btn-radio" id="radio3">
 
-          <div class="slide-box primeiro">
-            <img class="img-desktop" src="../img/slide-1 (2).png" alt="slide 1">
-            <img class="img-mobile" src="../img/slide-1-mob.jpg" alt="slide 1">
-          </div>
 
-          <div class="slide-box segundo">
-            <img class="img-desktop" src="../img/slide-2.png" alt="slide 3">
-            <img class="img-mobile" src="../img/slide-2-mob.jpg" alt="slide 1">
-          </div>
 
-          <div class="slide-box terceiro">
-            <img class="img-desktop" src="../img/slide-3.png" alt="slide 3">
-            <img class="img-mobile" src="../img/slide-1-mob.jpg" alt="slide 3">
-          </div>
 
-      </section>
 
-      <div class="card-container">
-        <div class="card">
-          <img src="C:\Users\Aluno\Downloads\programando_futuro\img\slide-1 (2).png">
-          <div class="card-content">
-            <h3>Introdução ao Arduino</h3>
-            <p>É como criar um roteiro passo a passo para que a máquina realize tarefas de maneira eficiente,
-              transformando ideias em resultados práticos. Em resumo, a lógica de programação é a linguagem que conecta nossas ideias ao mundo digital.</p>
-              <a href="" class="btn">Saiba Mais</a>
+
+
+     <!--------------------------------------------------   footer  -------------------------------------------------->
+
+     <footer class="bg-dark text-white py-5 fixed-footer">
+        <div class="container" style="height: 100px;">
+          <div class="row">
+            <!-- First Column -->
+            <div class="col-md-4">
+              <h5>Column 1</h5>
+              <p>Some information or text for the first column. You can add more details here as needed.</p>
+            </div>
+            <!-- Second Column -->
+            <div class="col-md-4">
+              <h5>Column 2</h5>
+              <p>Some information or text for the second column. You can add more details here as needed.</p>
+            </div>
+            <!-- Third Column -->
+            <div class="col-md-4">
+              <h5>Column 3</h5>
+              <p>Some information or text for the third column. You can add more details here as needed.</p>
+            </div>
           </div>
         </div>
+      </footer>
+    
 
-        <div class="card">
-          <img src="C:\Users\Aluno\Downloads\programando_futuro\img\slide-2.png">
-          <div class="card-content">
-            <h3>Introdução a Lógica de Programação</h3>
-            <p>Arduino é uma ferramenta poderosa para explorar a 
-              interseção entre imaginação e tecnologia, 
-              sendo ideal para aqueles que desejam transformar ideias criativas em projetos eletrônicos tangíveis no mundo da eletrônica DIY.</p>
-              <a href="" class="btn">Saiba Mais</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="card">
-        <img src="C:\Users\Aluno\Downloads\programando_futuro\img\slide-3.png">
-        <div class="card-content">
-          <h3>Resolução de problemas ao Arduino</h3>
-          <p>A resolução de problemas no Arduino não só faz parte da diversão, mas também representa vitórias que conduzem a uma jornada de sucesso na criação de projetos eletrônicos incríveis.</p>
-            <a href="" class="btn">Saiba Mais</a>
-        </div>
-      </div>
-    </div>
-
-      <div class="centro">
-
-        
-          <!--<h1>1. Introdução a Lógica de Programação</h1><br>
-          <p>A lógica de programação é como um conjunto de regras que ensina computadores a realizar tarefas. 
-            Imagine que você está dando instruções a um amigo para fazer um bolo. Você precisa ser claro, específico e seguir uma ordem lógica, como "misture os ingredientes antes de assar". 
-            Da mesma forma, na programação, você organiza comandos de maneira lógica para que o computador entenda e execute as ações desejadas. 
-            É como criar um roteiro passo a passo para que a máquina realize tarefas de maneira eficiente,
-            transformando ideias em resultados práticos. Em resumo, a lógica de programação é a linguagem que conecta nossas ideias ao mundo digital.</p>
-      <br><br>
-      <h1>2. Introdução ao Arduino</h1>
-      <br>
-      <p>O Arduino é um dispositivo eletrônico que serve como um cérebro para projetos criativos, facilitando a entrada na eletrônica para iniciantes e especialistas. 
-        Funciona como um kit de ferramentas para ideias eletrônicas, controlando luzes, motores e sensores. Sua simplicidade permite a criação desde simples pisca-piscas até projetos 
-        complexos, como robôs e automação residencial. Com uma comunidade ativa, tutoriais online e linguagem de programação fácil, o Arduino é uma ferramenta poderosa para explorar a 
-        interseção entre imaginação e tecnologia, 
-        sendo ideal para aqueles que desejam transformar ideias criativas em projetos eletrônicos tangíveis no mundo da eletrônica DIY.</p>
-        <br><br>
-      <h1>3. Resolução de problemas no Arduino</h1>
-      <br>
-      <p>Resolver problemas no Arduino é uma jornada emocionante, semelhante a desvendar enigmas divertidos. Quando algo não funciona como esperado,
-        a dica é manter a calma e observar o que está acontecendo. Verificar as conexões e ajustar pequenos detalhes pode resolver muitos problemas.
-          Se a solução ainda não estiver clara, a comunidade Arduino está pronta para ajudar, oferecendo experiências compartilhadas e recursos online, como fóruns e tutoriais.
-          A resolução de problemas no Arduino não só faz parte da diversão, mas também representa vitórias que conduzem a uma jornada de sucesso na criação de projetos eletrônicos incríveis.
-          </p> -->
-
-          
-          
-    </div>
-
-
-    <footer class="footer-distributed">
-      <div class="footer-left">
-        <h3><span>Programando o Futuro</span></h3>
-
-        <p class="footer-links">
-            <a href="projetos.html">Projetos</a>
-            |
-            <a href="contato.html">Quem Somos</a>
-            |
-            <a href="inscreva.html">Inscreva-se</a>
-
-        </p>
-      </div>
-      
-      <div class="footer-center">
-          <div>
-              <i class="fa fa-map-marker"></i>
-              <p><span>Instituto Federal de Educação, Ciência e Tecnologia de São Paulo
-              </span>
-              IFSP Câmpus Campinas</p>
-          </div>
-
-          <div>
-              <i class="fa fa-envelope"></i>
-              <p><a href="incentivandoinovacaoj@gmail.com">incentivandoinovacao@gmail.com</a></p>
-          </div>
-      </div>
-
-      <div class="footer-right">
-          <p class="footer-company-about">
-              <span>Sobre Nós</span>
-              <h>Somos alunos do Ensino Médio Integrado ao Técnico 
-                de Informática do IFSP Campinas. Este trabalho é desenvolvido para a matéria de Projeto Integrador IV.</h>
-          </p>
-      </div>
-    </footer>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="../js/mobile-navbar.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 

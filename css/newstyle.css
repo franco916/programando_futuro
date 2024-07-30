@@ -1,0 +1,91 @@
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  header, footer {
+    flex-shrink: 0;
+  }
+  
+  main {
+    flex-grow: 1;
+  }
+  
+  .fixed-footer {
+    background-color: #343a40;
+    color: white;
+    padding: 20px 0;
+  }
+  
+  .bg-purple {
+    background-color: #c6b3ec !important;
+    padding: 20px 0;
+  }
+  
+  .navbar-brand {
+    margin-left: 300px; 
+  }
+  
+  .navbar-nav {
+    margin-right: 300px; 
+  }
+  
+  .nav-link {
+    color: #f0f0f0; 
+  }
+  
+  .nav-link:hover {
+    color: #ffffff;
+  }
+  
+  .fa:hover {
+    opacity: 0.7;
+  }
+  
+  .fa {
+    padding: 20px;
+    font-size: 30px;
+    width: 30px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50%;
+  }
+  
+  .footer-link {
+    color: white;
+    text-decoration: none;
+  }
+  
+  .footer-link:hover {
+    text-decoration: none; /* Optional: Adds underline on hover */
+  }
+  
+  .carousel {
+    max-height: 500px; /* Adjust the height as needed */
+    overflow: hidden;
+  }
+  
+  .carousel img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+  
+  .carousel-caption {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    background-color: rgba(252, 252, 252, 0.5); /* Semi-transparent background */
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
+  .carousel-container {
+    max-width: 1200px; /* Set a maximum width for the carousel */
+    margin: 20px auto; /* Center the carousel and add margin to the top */
+    padding-top: 20px; /* Add padding to the top */
+  }
+  
