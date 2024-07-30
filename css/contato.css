@@ -1,17 +1,9 @@
 .body1{
-    background: -webkit-linear-gradient(left, #ffffff, #c6b3ec);
-    background: -moz-linear-gradient(left, #ffffff, #c6b3ec);
-    background: -ms-linear-gradient(left, #ffffff, #c6b3ec);
-    background: -o-linear-gradient(left, #ffffff, #c6b3ec);
-    background: linear-gradient(to right, #ffffff, #c6b3ec);
+    background-color: #ffffff;
 }
 
 .body2{
-    background: -webkit-linear-gradient(left, #ffffff, #c6b3ec);
-    background: -moz-linear-gradient(left, #ffffff, #c6b3ec);
-    background: -ms-linear-gradient(left, #ffffff, #c6b3ec);
-    background: -o-linear-gradient(left, #ffffff, #c6b3ec);
-    background: linear-gradient(to right, #ffffff, #c6b3ec);
+    background-color: #ffffff;
 }
 
 section.topo-do-site{
