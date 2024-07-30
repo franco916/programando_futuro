@@ -13,10 +13,12 @@ body {
   }
   
   .fixed-footer {
-    background-color: #004aad;
+    background-color: #004aad !important; /* New background color */
     color: white;
     padding: 20px 0;
-  }
+}
+
+
 
   .bg-dark{
     background-color: #004aad;
