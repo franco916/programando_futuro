@@ -13,13 +13,17 @@ body {
   }
   
   .fixed-footer {
-    background-color: #343a40;
+    background-color: #004aad;
     color: white;
     padding: 20px 0;
   }
+
+  .bg-dark{
+    background-color: #004aad;
+  }
   
   .bg-purple {
-    background-color: #c6b3ec !important;
+    background-color: #004aad !important;
     padding: 20px 0;
   }
   
@@ -72,20 +76,8 @@ body {
     object-fit: cover;
   }
   
-  .carousel-caption {
-    position: absolute;
-    bottom: 20px;
-    left: 20px;
-    right: 20px;
-    background-color: rgba(252, 252, 252, 0.5); /* Semi-transparent background */
-    color: white;
-    padding: 10px;
-    border-radius: 5px;
-  }
-  
   .carousel-container {
-    max-width: 1200px; /* Set a maximum width for the carousel */
-    margin: 20px auto; /* Center the carousel and add margin to the top */
-    padding-top: 20px; /* Add padding to the top */
+    max-width: 100%; /* Set a maximum width for the carousel */
+    padding-top: 0px; /* Add padding to the top */
   }
   
