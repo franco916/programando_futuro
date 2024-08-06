@@ -167,10 +167,20 @@ main {
 }
 
 .centro>h1{
+
+  text-align:  center;
+    font-size:   50px;
+    padding-top: 5px;
+    font-family: "Lobster", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  /*
   text-align:  center;
   font-size:   40px;
   padding-top: 5px;
-  font-family: system-ui, -apple-system, Helvetica, Arial, sans-serif;
+  font-family: "Lobster", sans-serif;
+  font-weight: 400;
+  font-style: normal;*/
 }
 
 .centro>h3{
