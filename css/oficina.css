@@ -1,0 +1,5 @@
+.background_image {
+    background: url("../img/programming.jpg") no-repeat center center;
+    background-size: cover; /* This makes sure the image covers the entire div */
+    padding: 20px; /* Add some padding if needed */
+}
