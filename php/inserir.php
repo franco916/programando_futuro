@@ -1,8 +1,8 @@
 <?php
 $servername = "localhost";
-$username = "root"; 
+$username = "root";
 $password = "";
-$dbname = "BD";
+$dbname = "bd";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
@@ -21,10 +21,8 @@ $sql = "INSERT INTO escolas (nome_instituicao, nome_representante, email, telefo
     VALUES ('$namei', '$namer', '$email', '$tel', '$inst', '$comentario')";
 
 if ($conn->query($sql) === TRUE) {
-    header("Location: ../p/inscreva.html");
+    header("Location: listagem.php");
     exit();
 }
 $conn->close();
 ?>
-
-
