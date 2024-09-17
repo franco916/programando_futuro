@@ -5,88 +5,143 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/style.css">
-
     <title>Login Admin</title>
-
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap'); 
 
-        *{
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #023047;
+        }
+
+        .page {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            align-content: center;
+            justify-content: center;
+            width: 100%;
+            height: 100vh;
+            background-color: #480ca8;
+        }
+
+        .formLogin {
+            display: flex;
+            flex-direction: column;
+            background-color: #fff;
+            border-radius: 7px;
+            padding: 40px;
+            box-shadow: 10px 10px 40px rgba(0, 0, 0, 0.4);
+            gap: 5px;
+            width: 100%;
+            max-width: 400px; /* Ajuste para largura máxima em dispositivos maiores */
+        }
+
+        .formLogin h3 {
+            padding: 0;
+            margin: 0;
+            font-weight: 500;
+            font-size: 2em; /* Ajuste do tamanho da fonte */
+            color: #023047;
+        }
+
+        .formLogin input {
+            padding: 15px;
+            font-size: 14px;
+            border: 1px solid #ccc;
+            margin-bottom: 20px;
+            margin-top: 5px;
+            border-radius: 4px;
+            transition: all linear 160ms;
+            outline: none;
+        }
+
+        .formLogin input:focus {
+            border: 1px solid #f72585;
+        }
+
+        .btn {
+            background-color: #f72585;
+            color: #fff;
+            font-size: 14px;
+            font-weight: 600;
+            border: none !important;
+            transition: all linear 160ms;
+            cursor: pointer;
+            margin: 0 !important;
+            padding: 15px;
+        }
+
+        .btn:hover {
+            transform: scale(1.05);
+            background-color: #ff0676;
+        }
+
+        /* Estilos de menu já existentes */
+        * {
             box-sizing: border-box;
         }
 
-        body{
+        body {
             width: 100%;
             height: 100%;
         }
 
-        form{
+        form {
             width: 300px;
             margin: 200px auto;
             text-align: center;
         }
 
-        input{
+        input {
             display: block;
             margin: 10px auto;
             width: 250px;
             height: 30px;
         }
-
     </style>
-
 </head>
 <body>
-
     <header>
-
         <nav>
-          <a class="logo" href="/"> Programando o Futuro</a>
-          
-          <div class="mobile-menu">
-            <div class="line1"></div>
-            <div class="line2"></div>
-            <div class="line3"></div>
-          </div>
-    
-          <ul class="nav-list">
-            <li><a href="../index.html">Início</a></li>
-            <li><a href="projetos2.html">Projetos</a></li>
-            <li><a href="contato.html">Quem Somos</a></li>
-            <li><a href="inscreva.html">Inscreva-se</a></li>
-          </ul>
-    
+            <a class="logo" href="/">Programando o Futuro</a>
+            <div class="mobile-menu">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+            <ul class="nav-list">
+                <li><a href="../index.html">Início</a></li>
+                <li><a href="projetos2.html">Projetos</a></li>
+                <li><a href="contato.html">Quem Somos</a></li>
+                <li><a href="inscreva.html">Inscreva-se</a></li>
+            </ul>
         </nav>
-      </header>
+    </header>
     
-
-    <form>
-
-        <h3>Login</h3>
-        <input type="text" placeholder="Login" id="login">
-        <input type="password" placeholder="Senha" id="senha">
-        <input type="submit" onclick="logar(); return false">
-
-    </form>
-
+    <div class="page">
+        <form class="formLogin">
+            <h3>Login</h3>
+            <input type="text" placeholder="Login" id="login">
+            <input type="password" placeholder="Senha" id="senha">
+            <button type="submit" class="btn" onclick="logar(); return false;">Entrar</button>
+        </form>
+    </div>
 
     <script>
-
-
-        function logar(){
-
+        function logar() {
             var login = document.getElementById('login').value;
             var senha = document.getElementById('senha').value;
 
-            if(login == "Fejurrata" && senha == "ProgIF2024"){
+            if (login == "Fejurrata" && senha == "ProgIF2024") {
                 alert('Sucesso');
                 location.href = "php/home.php";
-            }else{
-                alert('Usuario ou senha incorretos');
+            } else {
+                alert('Usuário ou senha incorretos');
             }
-
         }
-
     </script>
-
 </body>
 </html>
