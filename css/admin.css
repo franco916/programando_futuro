@@ -15,10 +15,10 @@
     font-weight: 600;
 }
 .input-box .input-field{
-    width: 100%;
+    width: 50%;
     height: 60px;
     font-size: 17px;
-    padding: 0 25px;
+    padding: 20px;
     margin-bottom: 15px;
     border-radius: 30px;
     border: none;
