@@ -1,4 +1,4 @@
-<!DOCTYPE html>  
+<!DOCTYPE html>
 <html lang="pt-br">
 
 <head>
@@ -10,132 +10,132 @@
     <link rel="stylesheet" href="../css/estilebas.css">
     <link rel="stylesheet" href="../css/formstyle.css">
 
-    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="../css/newstyle.css" />
 
     <title>Formulario para Inscrição</title>
+
+    <style>
+        .form-control {
+            border-radius: 15px; /* Aumente o valor para bordas mais arredondadas */
+        }
+    </style>
 </head>
 
 <body>
 
-  <header>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-purple">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="../index.html">PROGRAMANDO O FUTURO</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="../index.html">Início</a>
-            </li>
-            <li class="nav-item"></li>
-                <a class="nav-link" href="p/projetos2.html">Projetos</a>
-              </li>
-            <li class="nav-item">
-              <a class="nav-link" href="contato.html">Quem Somos</a>
-            </li>
-            <li class="nav-item"></li>
-              <a class="nav-link" href="admin.html">Admin</a>
-            </li>
-          </ul>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-purple">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="../index.html">PROGRAMANDO O FUTURO</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="../index.html">Início</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="projetos2.html">Projetos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contato.html">Quem Somos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="admin.html">Admin</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="text-center mb-4">
+                    <h2>Inscreva-se aqui</h2>
+                    <p>e participe do Projeto</p>
+                </div>
+                <form class="fomr-inscreva" action="../php/php.php" method="post">
+                    <div class="form-group">
+                        <label for="nome">Nome da Instituição</label>
+                        <input type="text" name="nome_instituicao" id="nome_instituicao" class="form-control" placeholder="Digite o nome da sua Instituição" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="tipo_instituicao">Tipo de Instituição</label>
+                        <select id="tipo_instituicao" name="tipo_instituicao" class="form-control" required>
+                            <option value="Estadual">Estadual</option>
+                            <option value="Federal">Federal</option>
+                            <option value="Municipal">Municipal</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="namer">Nome do(a) Representante</label>
+                        <input type="text" name="nome_representante" id="nome_representante" class="form-control" placeholder="Digite o seu nome" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">E-mail</label>
+                        <input type="email" name="email" id="email" class="form-control" placeholder="Digite um email para contato" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="telefone">Telefone</label>
+                        <input type="text" name="tel" id="tel" class="form-control" placeholder="Digite o seu telefone" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="comentario">Observação e/ou Comentários</label>
+                        <input type="text" name="comentario" id="comentario" class="form-control">
+                    </div>
+
+                    <div class="text-center">
+                        <button id="enviar" type="submit" class="btn btn-primary">Enviar</button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="col-md-6 d-flex justify-content-center align-items-center">
+                <img src="../img/img-formulario.png" class="img-fluid" alt="Imagem do Formulário" style="border-radius: 10px;">
+            </div>
         </div>
-      </div>
-    </nav>
-  </header>
-  
-  <div class="container mt-5">
-    <div class="row">
-      <div class="col-md-6">
-        <div class="text-center mb-4">
-          <h2>Inscreva-se aqui</h2>
-          <p>e participe do Projeto</p>
-        </div>
-        <form class="fomr-inscreva" action="../php/php.php" method="post">
-            <div class="form-group">
-                <label for="nome">Nome da Instituição</label>
-                <input type="text" name="nome_instituicao" id="nome_instituicao" class="form-control" placeholder="Digite o nome da sua Instituição" required>
-            </div>
-
-            <div class="form-group">
-              <label for="tipo_instituicao">Tipo de Instituição</label>
-              <select id="tipo_instituicao" name="tipo_instituicao" class="form-control" required>
-                    <option value="Estadual">Estadual</option>
-                    <option value="Federal">Federal</option>
-                    <option value="Municipal">Municipal</option>
-              </select>
-            </div>
-
-            <div class="form-group">
-              <label for="namer">Nome do(a) Representante</label>
-              <input type="text" name="nome_representante" id="nome_representante" class="form-control" placeholder="Digite o seu nome" required>
-            </div>
-
-            <div class="form-group">
-                <label for="email">E-mail</label>
-                <input type="email" name="email" id="email" class="form-control" placeholder="Digite um email para contato" required>
-            </div>
-
-            <div class="form-group">
-                <label for="telefone">Telefone</label>
-                <input type="text" name="tel" id="tel" class="form-control" placeholder="Digite o seu telefone" required>
-            </div>
-            
-            <div class="form-group">
-              <label for="comentario">Observação e/ou Comentários</label>
-              <input type="text" name="comentario" id="comentario" class="form-control">
-            </div>
-         
-            <div class="text-center">
-                <button id="enviar" type="submit" class="btn btn-primary">Enviar</button>
-            </div>
-        </form>
-      </div>
-      
-      <div class="col-md-6 d-flex justify-content-center align-items-center">
-        <img src="../img/img-formulario.png" class="img-fluid" alt="Imagem do Formulário" style="border-radius: 10px;">
-      </div>
+        <br><br><br>
     </div>
-    <br><br><br>
-  </div>
-  
-  <footer class="bg-dark text-white py-5 fixed-footer pading-footer">
-    <div class="container pading-footer">
-      <div class="row">
-        <!-- First Column -->
-        <div class="col-md-4">
-          <h5>Programando o Futuro</h5>
-          <p>
 
-            <a href="projetos2.html" class="footer-link">Projetos</a> |
-            <a href="contato.html" class="footer-link">Quem Somos</a> |
-            <a href="inscreva.html" class="footer-link">Inscreva-se</a>
-
-          </p>
+    <footer class="bg-dark text-white py-5 fixed-footer pading-footer">
+        <div class="container pading-footer">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>Programando o Futuro</h5>
+                    <p>
+                        <a href="projetos2.html" class="footer-link">Projetos</a> |
+                        <a href="contato.html" class="footer-link">Quem Somos</a> |
+                        <a href="inscreva.html" class="footer-link">Inscreva-se</a>
+                    </p>
+                </div>
+                <div class="col-md-4">
+                    <h5><i class="fas fa-map-marker-alt"></i><a href="https://maps.app.goo.gl/AYAeHXpnrSXAF6YH9" class="footer-link"> Instituto Federal de Educação, Ciência e Tecnologia de São Paulo
+                        IFSP Câmpus Campinas</a></h5>
+                    <p><i class="fas fa-envelope"></i> programando_futuro@gmail.com</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Sobre Nós</h5>
+                    <p>Somos alunos do Ensino Médio Integrado ao Técnico de Informática do IFSP Campinas. Este trabalho é desenvolvido para a matéria de Projeto Integrador IV.</p>
+                </div>
+            </div>
         </div>
-        <!-- Second Column -->
-        <div class="col-md-4">
-          <h5><i class="fas fa-map-marker-alt"></i><a href="https://maps.app.goo.gl/AYAeHXpnrSXAF6YH9" class="footer-link"> Instituto Federal de Educação, Ciência e Tecnologia de São Paulo
-            IFSP Câmpus Campinas</a></h5>
-          <p><i class="fas fa-envelope"></i> programando_futuro@gmail.com</p>
-        </div>
-        <!-- Third Column -->
-        <div class="col-md-4">
-          <h5>Sobre Nós</h5>
-          <p>Somos alunos do Ensino Médio Integrado ao Técnico de Informática do IFSP Campinas. Este trabalho é desenvolvido para a matéria de Projeto Integrador IV.</p>
-        </div>
-      </div>
-    </div>
-  </footer>
+    </footer>
 
-  <!-- Bootstrap Bundle with Popper -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
+
