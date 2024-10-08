@@ -1,0 +1,54 @@
+/* Estilos padrão */
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .header {
+    position: relative;
+    background-color: #004aad; /* Cor de fundo para o cabeçalho */
+    color: white;
+    padding: 20px;
+  }
+  
+  /* Estilos para telas menores que 768px */
+  @media (max-width: 768px) {
+    .header {
+      position: fixed; /* Fixa o cabeçalho no topo */
+      width: 100%;
+      top: 0;
+    }
+  
+    .navbar {
+      flex-direction: column; /* Muda a direção da navbar para coluna */
+    }
+  
+    .navbar-nav {
+      padding: 10px 0; /* Adiciona espaçamento entre os itens da navbar */
+    }
+  }
+  
+  /* Estilos para telas entre 768px e 1200px */
+  @media (min-width: 768px) and (max-width: 1200px) {
+    .header {
+      position: sticky; /* Fixa o cabeçalho apenas ao rolar */
+      top: 0;
+    }
+  
+    .navbar {
+      justify-content: center; /* Centraliza os itens da navbar */
+    }
+  }
+  
+  /* Estilos para telas maiores que 1200px */
+  @media (min-width: 1200px) {
+    .header {
+      position: relative; /* Cabeçalho normal */
+    }
+  
+    .navbar {
+      justify-content: flex-start; /* Alinha os itens da navbar à esquerda */
+    }
+  }
+  
