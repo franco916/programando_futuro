@@ -1,106 +1,192 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 
-  <head>
-
-
+<head>
     <meta charset="UTF-8" />
-
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
     <title>Programando o Futuro</title>
 
-     <!-- Bootstrap CSS -->
-     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-     <link rel="stylesheet" href="css/newstyle.css" />
-
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/newstyle.css" />
     <link rel="stylesheet" href="css/estilebas.css" />
-
-
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
-
     <link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
+    
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+        }
 
-  </head>
+        .card {
+            position: relative;
+            height: 70vh; /* Cada card ocupa 70% da altura da página */
+            overflow: hidden; /* Esconde qualquer conteúdo que ultrapasse o card */
+            margin: 20px; /* Margem entre os cards */
+            border: 2px solid #ffffff; /* Borda branca */
+            border-radius: 10px; /* Bordas arredondadas */
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Sombra */
+            transition: transform 0.3s; /* Efeito de transição ao passar o mouse */
+        }
 
-  <body>
+        .card:hover {
+            transform: scale(1.05); /* Aumenta o card ao passar o mouse */
+        }
 
+        .card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Faz a imagem cobrir todo o card */
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
 
+        .card-content {
+            position: relative;
+            z-index: 2; /* Coloca o texto acima da imagem */
+            color: white;
+            text-align: left; /* Alinha o texto à esquerda */
+            padding: 20px; /* Adiciona espaçamento interno */
+        }
+
+        .card-content h1 {
+            font-size: 2rem; /* Aumenta o tamanho da fonte do título */
+            margin-bottom: 15px; /* Espaçamento abaixo do título */
+        }
+
+        .card-content p {
+            font-size: 1.2rem; /* Aumenta o tamanho da fonte do parágrafo */
+        }
+
+        .bg-purple {
+            background-color: #6a1b9a;
+        }
+
+        /* Novo estilo para o efeito de blur */
+        .blur-top {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 30%; /* Ajuste a altura conforme necessário */
+            background: rgba(0, 0, 0, 0.5); /* Fundo semi-transparente */
+            backdrop-filter: blur(10px); /* Efeito de blur */
+            z-index: 1; /* Fica acima da imagem */
+        }
+    </style>
+</head>
+
+<body>
     <header>
-      <nav class="navbar navbar-expand-lg navbar-dark bg-purple">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="index.html">PROGRAMANDO O FUTURO</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
-              <li class="nav-item"></li>
-                <a class="nav-link" href="p/projetos2.html">Projetos</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="p/contato.html">Quem Somos</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="p/inscreva.html">Inscreva-se</a>
-              </li>
-
-              <li class="nav-item"></li>
-                <a class="nav-link" href="p/admin.html">Admin</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-purple">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.html">PROGRAMANDO O FUTURO</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="p/projetos2.html">Projetos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="p/contato.html">Quem Somos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="p/inscreva.html">Inscreva-se</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="p/admin.html">Admin</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
     </header>
 
-    <section classe="banner"></section>
+    <section class="banner"></section>
 
-    <main><img src="img/banner2.0.png" alt="banner" class="q1">
-
-      <img src="img/mapamental.png" id="mapamental">
-
+    <main>
+        <img src="img/banner2.0.png" alt="banner" class="q1">
+        <div class="container-fluid p-0">
+            <div class="row g-0">
+                <div class="col-md-6 p-2">
+                    <div class="card">
+                        <img src="img/adolescentes.jpg" alt="Card 1">
+                        <div class="blur-top"></div> <!-- Adicionando o efeito de blur -->
+                        <div class="card-content">
+                            <h1>Nossa Proposta</h1>
+                            <p>Abordar a carência de incentivo aos alunos das escolas públicas de Campinas na área de tecnologia. Para isso, vamos realizar oficinas de programação e Arduino.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 p-2">
+                    <div class="card">
+                        <img src="img/programacao.jpg" alt="Card 2">
+                        <div class="blur-top"></div> <!-- Adicionando o efeito de blur -->
+                        <div class="card-content">
+                            <h1>Objetivos</h1>
+                            <p>Estimular a curiosidade, criatividade e pensamento crítico dos alunos, proporcionando-lhes uma experiência fascinante no mundo da programação.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 p-2">
+                    <div class="card">
+                        <img src="img/ard.jpg" alt="Card 3">
+                        <div class="blur-top"></div> <!-- Adicionando o efeito de blur -->
+                        <div class="card-content">
+                            <h1>Como funciona?</h1>
+                            <p>A partir das oficinas escolares, iremos ensinar a resolução de problemas com a programação e o Arduino.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 p-2">
+                    <div class="card">
+                        <img src="img/menino.jpg" alt="Card 4">
+                        <div class="blur-top"></div> <!-- Adicionando o efeito de blur -->
+                        <div class="card-content">
+                            <h1>Público-Alvo</h1>
+                            <p>Especialmente alunos do Ensino Fundamental II de escolas públicas de Campinas.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
 
-
-    
-
-    
     <footer class="bg-dark text-white py-5 fixed-footer">
-      <div class="container">
-        <div class="row">
-          <!-- First Column -->
-          <div class="col-md-4">
-            <h5>Programando o Futuro</h5>
-            <p>
-
-              <a href="index.html" class="footer-link">Inicio</a> |
-              <a href="projetos2.html" class="footer-link">Projetos</a> |
-              <a href="contato.html" class="footer-link">Quem Somos</a> |
-              <a href="inscreva.html" class="footer-link">Inscreva-se</a>
-
-            </p>
-          </div>
-          <!-- Second Column -->
-          <div class="col-md-4">
-            <h5><i class="fas fa-map-marker-alt"></i><a href="https://maps.app.goo.gl/AYAeHXpnrSXAF6YH9" class="footer-link"> Instituto Federal de Educação, Ciência e Tecnologia de São Paulo
-              IFSP Câmpus Campinas</a></h5>
-            <p><i class="fas fa-envelope"></i> programando_futuro@gmail.com</p>
-          </div>
-          <!-- Third Column -->
-          <div class="col-md-4">
-            <h5>Sobre Nós</h5>
-            <p>Somos alunos do Ensino Médio Integrado ao Técnico de Informática do IFSP Campinas. Este trabalho é desenvolvido para a matéria de Projeto Integrador IV.</p>
-          </div>
+        <div class="container">
+            <div class="row">
+                <!-- First Column -->
+                <div class="col-md-4">
+                    <h5>Programando o Futuro</h5>
+                    <p>
+                        <a href="index.html" class="footer-link">Inicio</a> |
+                        <a href="projetos2.html" class="footer-link">Projetos</a> |
+                        <a href="contato.html" class="footer-link">Quem Somos</a> |
+                        <a href="inscreva.html" class="footer-link">Inscreva-se</a>
+                    </p>
+                </div>
+                <!-- Second Column -->
+                <div class="col-md-4">
+                    <h5><i class="fas fa-map-marker-alt"></i>
+                        <a href="https://maps.app.goo.gl/AYAeHXpnrSXAF6YH9" class="footer-link"> Instituto Federal de Educação, Ciência e Tecnologia de São Paulo IFSP Câmpus Campinas</a>
+                    </h5>
+                    <p><i class="fas fa-envelope"></i> programando_futuro@gmail.com</p>
+                </div>
+                <!-- Third Column -->
+                <div class="col-md-4">
+                    <h5>Sobre Nós</h5>
+                    <p>Somos alunos do Ensino Médio Integrado ao Técnico de Informática do IFSP Campinas. Este trabalho é desenvolvido para a matéria de Projeto Integrador IV.</p>
+                </div>
+            </div>
         </div>
-      </div>
     </footer>
-    
-     <!-- Bootstrap Bundle with Popper -->
-     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
-  </body>
-</html>
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min

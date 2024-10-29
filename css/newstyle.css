@@ -91,3 +91,35 @@ body {
   .pading-footer{
     padding-top: 10px;
   }
+
+  /* Estilo para cards pequenos */
+.small-card {
+  background-color: #fafafa;
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  text-align: center;
+}
+
+.small-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.small-card .card-img-top {
+  border-radius: 12px 12px 0 0;
+  height: 150px;
+  object-fit: cover;
+}
+
+.small-card .card-title {
+  color: #6a1b9a;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.small-card .card-text {
+  color: #555;
+  font-size: 1rem;
+}
