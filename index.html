@@ -10,73 +10,121 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="css/newstyle.css" />
-    <link rel="stylesheet" href="css/estilebas.css" />
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
-    <link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
-    
+
     <style>
         body, html {
             height: 100%;
             margin: 0;
+            font-family: 'Arial', sans-serif;
         }
 
-        .card {
-            position: relative;
-            height: 70vh; /* Cada card ocupa 70% da altura da página */
-            overflow: hidden; /* Esconde qualquer conteúdo que ultrapasse o card */
-            margin: 20px; /* Margem entre os cards */
-            border: 2px solid #ffffff; /* Borda branca */
-            border-radius: 10px; /* Bordas arredondadas */
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Sombra */
-            transition: transform 0.3s; /* Efeito de transição ao passar o mouse */
-        }
-
-        .card:hover {
-            transform: scale(1.05); /* Aumenta o card ao passar o mouse */
-        }
-
-        .card img {
+        /* Hero image ocupa a tela inteira */
+        .hero {
+            background-size: cover;
+            background-position: center;
             width: 100%;
-            height: 100%;
-            object-fit: cover; /* Faz a imagem cobrir todo o card */
-            position: absolute;
-            top: 0;
-            left: 0;
-            z-index: 1;
-        }
-
-        .card-content {
+            height: 100vh;
             position: relative;
-            z-index: 2; /* Coloca o texto acima da imagem */
+            overflow: hidden;
+            margin: 0;
+        }
+
+        /* Primeira imagem em full screen */
+        .hero:first-of-type {
+            background-image: url('img/banner2.0.png');
+        }
+
+        /* Imagens intermediárias */
+        .hero:not(:first-of-type) {
+            height: 60vh;
+        }
+
+        /* Responsividade para telas pequenas */
+        @media (max-width: 768px) {
+            .hero:first-of-type {
+                height: 60vh;
+            }
+
+            .hero:not(:first-of-type) {
+                height: 40vh;
+            }
+        }
+
+        /* Estilos dos cards ocupando largura total */
+        .bg-gray-section, .bg-dark-gray-section {
+            background-color: #333;
+            padding: 60px 0;
+            text-align: center;
             color: white;
-            text-align: left; /* Alinha o texto à esquerda */
-            padding: 20px; /* Adiciona espaçamento interno */
+            width: 100vw;
+            max-width: 100%; /* Remover espaço lateral */
+            margin: 0;
+            box-sizing: border-box;
         }
 
-        .card-content h1 {
-            font-size: 2rem; /* Aumenta o tamanho da fonte do título */
-            margin-bottom: 15px; /* Espaçamento abaixo do título */
+        .bg-gray-section h1, .bg-dark-gray-section h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
         }
 
-        .card-content p {
-            font-size: 1.2rem; /* Aumenta o tamanho da fonte do parágrafo */
+        .bg-gray-section p, .bg-dark-gray-section p {
+            font-size: 1.25rem;
+            color: #fff;
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .icon {
+            font-size: 3rem;
+            color: #004aad;
+            margin-bottom: 10px;
         }
 
         .bg-purple {
-            background-color: #6a1b9a;
+            background-color: #004aad;
         }
 
-        /* Novo estilo para o efeito de blur */
-        .blur-top {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 30%; /* Ajuste a altura conforme necessário */
-            background: rgba(0, 0, 0, 0.5); /* Fundo semi-transparente */
-            backdrop-filter: blur(10px); /* Efeito de blur */
-            z-index: 1; /* Fica acima da imagem */
+        .navbar-nav .nav-link {
+            font-size: 1rem;
+            padding: 10px 15px;
+        }
+
+        footer {
+            background-color: #004aad;
+            color: white;
+            padding: 2rem 0;
+            width: 100vw;
+            max-width: 100%;
+            margin: 0;
+        }
+
+        /* Estilo do menu */
+        .navbar {
+            transition: background-color 0.3s;
+        }
+
+        .navbar.scrolled {
+            background-color: #004aad;
+        }
+
+        /* Responsividade dos textos e elementos de card */
+        @media (max-width: 768px) {
+            .bg-gray-section, .bg-dark-gray-section {
+                padding: 40px 0;
+                width: 100vw;
+            }
+
+            .bg-gray-section h1, .bg-dark-gray-section h1 {
+                font-size: 2rem;
+            }
+
+            .bg-gray-section p, .bg-dark-gray-section p {
+                font-size: 1.1rem;
+            }
+
+            .icon {
+                font-size: 2.5rem;
+            }
         }
     </style>
 </head>
@@ -109,84 +157,86 @@
         </nav>
     </header>
 
-    <section class="banner"></section>
-
     <main>
-        <img src="img/banner2.0.png" alt="banner" class="q1">
-        <div class="container-fluid p-0">
-            <div class="row g-0">
-                <div class="col-md-6 p-2">
-                    <div class="card">
-                        <img src="img/adolescentes.jpg" alt="Card 1">
-                        <div class="blur-top"></div> <!-- Adicionando o efeito de blur -->
-                        <div class="card-content">
-                            <h1>Nossa Proposta</h1>
-                            <p>Abordar a carência de incentivo aos alunos das escolas públicas de Campinas na área de tecnologia. Para isso, vamos realizar oficinas de programação e Arduino.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 p-2">
-                    <div class="card">
-                        <img src="img/programacao.jpg" alt="Card 2">
-                        <div class="blur-top"></div> <!-- Adicionando o efeito de blur -->
-                        <div class="card-content">
-                            <h1>Objetivos</h1>
-                            <p>Estimular a curiosidade, criatividade e pensamento crítico dos alunos, proporcionando-lhes uma experiência fascinante no mundo da programação.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 p-2">
-                    <div class="card">
-                        <img src="img/ard.jpg" alt="Card 3">
-                        <div class="blur-top"></div> <!-- Adicionando o efeito de blur -->
-                        <div class="card-content">
-                            <h1>Como funciona?</h1>
-                            <p>A partir das oficinas escolares, iremos ensinar a resolução de problemas com a programação e o Arduino.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 p-2">
-                    <div class="card">
-                        <img src="img/menino.jpg" alt="Card 4">
-                        <div class="blur-top"></div> <!-- Adicionando o efeito de blur -->
-                        <div class="card-content">
-                            <h1>Público-Alvo</h1>
-                            <p>Especialmente alunos do Ensino Fundamental II de escolas públicas de Campinas.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="hero"></div> <!-- Primeira imagem responsiva full screen -->
+
+        <div class="bg-gray-section">
+            <i class="fas fa-laptop icon"></i>
+            <h1>Nossa Proposta</h1>
+            <p>Abordar a carência de incentivo aos alunos das escolas públicas de Campinas (SP) na área de tecnologia. Para isso, vamos realizar oficinas de programação e Arduino.</p>
         </div>
+
+        <div class="hero" style="background-image: url('img/index.jpg');"></div>
+
+        <div class="bg-gray-section">
+            <i class="fas fa-bullseye icon"></i>
+            <h1>Público-Alvo</h1>
+            <p>Especialmente alunos do Ensino Fundamental II de escolas públicas de Campinas.</p>
+        </div>
+
+        <div class="hero" style="background-image: url('img/criancas.jpg');"></div>
+
+        <div class="bg-dark-gray-section">
+            <i class="fas fa-brain icon"></i>
+            <h1>Objetivos</h1>
+            <p>Estimular a curiosidade, criatividade e pensamento crítico dos alunos, proporcionando-lhes uma experiência fascinante no mundo da programação.</p>
+        </div>
+
+        <div class="hero" style="background-image: url('img/programacao1.jpg');"></div>
+
+        <div class="bg-dark-gray-section">
+            <i class="fas fa-code icon"></i>
+            <h1>Como Funciona?</h1>
+            <p>O projeto é implementado por meio de oficinas escolares, onde os alunos podem aprender e praticar programação e Arduino de maneira prática e interativa.</p>
+        </div>
+
+        <div class="hero" style="background-image: url('img/ard.jpg');"></div>
     </main>
 
-    <footer class="bg-dark text-white py-5 fixed-footer">
-        <div class="container">
+    <footer>
+        <div class="container text-center">
             <div class="row">
-                <!-- First Column -->
                 <div class="col-md-4">
-                    <h5>Programando o Futuro</h5>
-                    <p>
-                        <a href="index.html" class="footer-link">Inicio</a> |
-                        <a href="projetos2.html" class="footer-link">Projetos</a> |
-                        <a href="contato.html" class="footer-link">Quem Somos</a> |
-                        <a href="inscreva.html" class="footer-link">Inscreva-se</a>
+                    <p style="font-size: 1rem;">Programando o Futuro</p>
+                    <p style="font-size: 1rem;">
+                        <a href="../index.html" class="footer-link" style="color: white; text-decoration: none;">Início</a> |
+                        <a href="p/projetos2.html" class="footer-link" style="color: white; text-decoration: none;">Projetos</a> |
+                        <a href="p/contato.html" class="footer-link" style="color: white; text-decoration: none;">Quem Somos</a> |
+                        <a href="p/inscreva.html" class="footer-link" style="color: white; text-decoration: none;">Inscreva-se</a>
                     </p>
                 </div>
-                <!-- Second Column -->
                 <div class="col-md-4">
-                    <h5><i class="fas fa-map-marker-alt"></i>
-                        <a href="https://maps.app.goo.gl/AYAeHXpnrSXAF6YH9" class="footer-link"> Instituto Federal de Educação, Ciência e Tecnologia de São Paulo IFSP Câmpus Campinas</a>
-                    </h5>
-                    <p><i class="fas fa-envelope"></i> programando_futuro@gmail.com</p>
+                    <p style="font-size: 1rem;">
+                        <i class="fas fa-map-marker-alt"></i> 
+                        <a href="https://maps.app.goo.gl/AYAeHXpnrSXAF6YH9" class="footer-link" style="color: white; text-decoration: none;">IFSP Câmpus Campinas</a>
+                    </p>
+                    <p style="font-size: 1rem;">
+                        <i class="fas fa-envelope"></i> programando_futuro@gmail.com
+                    </p>
                 </div>
-                <!-- Third Column -->
                 <div class="col-md-4">
-                    <h5>Sobre Nós</h5>
-                    <p>Somos alunos do Ensino Médio Integrado ao Técnico de Informática do IFSP Campinas. Este trabalho é desenvolvido para a matéria de Projeto Integrador IV.</p>
+                    <p style="font-size: 1rem;">Sobre Nós</p>
+                    <p style="font-size: 1rem;">
+                        Somos alunos do Ensino Médio Integrado ao Técnico de Informática do IFSP Campinas. Este trabalho é desenvolvido para a matéria de Projeto Integrador IV.
+                    </p>
                 </div>
             </div>
         </div>
     </footer>
-
+    
     <!-- Bootstrap Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // Para adicionar efeito de rolagem no menu
+        window.onscroll = function() {
+            var navbar = document.querySelector(".navbar");
+            if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+                navbar.classList.add("scrolled");
+            } else {
+                navbar.classList.remove("scrolled");
+            }
+        };
+    </script>
+</body>
+</html>

@@ -1,104 +1,371 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Programando o Futuro</title>
+    <title>O que é Lógica de Programação</title>
 
-    <link rel="stylesheet" href="../css/style.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="../css/slide.css" />
+    <style>
+        /* Adicionando imagem de fundo */
+        body {
+            background-color: #333;
+            background-size: cover; /* Cobre toda a área da página */
+            background-position: center; /* Centraliza a imagem */
+            color: white; /* Cor do texto branco para melhor contraste */
+            font-family: 'Poppins', sans-serif; /* Usando a fonte Poppins */
+        }
 
-    <link rel="stylesheet" href="../css/estilebas.css" />
+        .content {
+            padding: 30px; /* Aumentando o padding */
+            text-align: justify; /* Justificando o texto */
+            border-radius: 15px; /* Bordas mais arredondadas */
+            max-width: 600px; /* Largura máxima do card */
+            margin: 30px auto; /* Centraliza horizontalmente */
+        }
 
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+        h1 {
+            margin-bottom: 20px; /* Espaço abaixo do título */
+            font-weight: 600; /* Título em negrito */
+            font-size: 2.5rem; /* Aumentando o tamanho da fonte */
+            text-align: center; /* Centralizando o título */
+            color: #e0e0e0; /* Cor do título para um toque mais suave */
+        }
 
-    <link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
+        h2 {
+            margin: 20px 0; /* Margem acima e abaixo do título */
+            font-weight: 600; /* Título em negrito */
+            font-size: 2rem; /* Tamanho da fonte do subtítulo */
+            text-align: center; /* Centralizando o título */
+            color: #e0e0e0; /* Cor do subtítulo */
+        }
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">  
+        p {
+            font-size: 1.125rem; /* Tamanho da fonte do parágrafo */
+            line-height: 1.6; /* Altura da linha */
+            margin-bottom: 20px; /* Espaço abaixo dos parágrafos */
+            color: #fff; /* Cor do texto branco */
+        }
 
-    <script src="../js/slide.js" defer></script>
+        footer {
+            background-color: #004aad; /* Cor de fundo do footer */
+            color: white; /* Cor do texto do footer */
+            padding: 2rem 0; /* Padding do footer */
+        }
+
+        /* Estilo do menu azul escuro */
+        .navbar {
+            background-color: #004aad; /* Cor de fundo do menu */
+        }
+
+        /* Estilo para os links do footer */
+        .footer-link {
+            color: white;
+            text-decoration: none;
+        }
+
+        /* Estilos do computador */
+        .computer {
+            width: 400px; /* Aumentando a largura do computador */
+            height: 250px; /* Aumentando a altura do computador */
+            background-color: #333;
+            border: 5px solid #444;
+            border-radius: 10px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            margin: 0 auto; /* Centraliza o computador horizontalmente */
+            animation: bounce 4s; /* Removido 'infinite' */
+        }
+
+        .screen {
+            width: 100%;
+            height: 100%;
+            background-color: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Courier New', Courier, monospace;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .code {
+            position: absolute;
+            white-space: nowrap;
+            overflow: hidden;
+            animation: typing 6s steps(30, end); /* Removido 'infinite' */
+            color: #00ff00; /* Cor padrão do texto do código */
+        }
+
+        /* Adicionando cores diferentes ao código */
+        .code span {
+            display: inline-block;
+            animation: colorChange 6s; /* Removido 'infinite' */
+        }
+
+        @keyframes typing {
+            0% {
+                width: 0;
+            }
+
+            25% {
+                width: 100%;
+            }
+
+            50% {
+                width: 0; /* Esconder o código para reiniciar a animação */
+            }
+
+            100% {
+                width: 100%;
+            }
+        }
+
+        @keyframes colorChange {
+            0% {
+                color: #00ff00;
+            } /* Verde */
+            20% {
+                color: #ff0000;
+            } /* Vermelho */
+            40% {
+                color: #0000ff;
+            } /* Azul */
+            60% {
+                color: #ffff00;
+            } /* Amarelo */
+            80% {
+                color: #ff00ff;
+            } /* Magenta */
+            100% {
+                color: #00ff00;
+            } /* Verde de volta */
+        }
+
+        @keyframes bounce {
+            0%,
+            20%,
+            50%,
+            80%,
+            100% {
+                transform: translateY(0); /* Posição original */
+            }
+
+            40% {
+                transform: translateY(-10px); /* Eleva mais */
+            }
+
+            60% {
+                transform: translateY(-5px); /* Eleva um pouco menos */
+            }
+        }
+        /* Código anterior omitido para focar nas mudanças */
+    .computer {
+        /* Adicionando 'infinite' para o loop de animação */
+        animation: bounce 4s infinite;
+    }
+
+    .code {
+        position: absolute;
+        white-space: nowrap;
+        overflow: hidden;
+        /* Adicionando 'infinite' para o loop de animação de digitação */
+        animation: typing 6s steps(30, end) infinite;
+        color: #00ff00;
+    }
+
+    /* Adicionando 'infinite' para o loop de animação de cores */
+    .code span {
+        display: inline-block;
+        animation: colorChange 6s infinite;
+    }
+
+    @keyframes typing {
+        0% {
+            width: 0;
+        }
+
+        25% {
+            width: 100%;
+        }
+
+        50% {
+            width: 0; /* Esconder o código para reiniciar a animação */
+        }
+
+        100% {
+            width: 100%;
+        }
+    }
+
+    @keyframes colorChange {
+        0% {
+            color: #00ff00;
+        }
+        20% {
+            color: #ff0000;
+        }
+        40% {
+            color: #0000ff;
+        }
+        60% {
+            color: #ffff00;
+        }
+        80% {
+            color: #ff00ff;
+        }
+        100% {
+            color: #00ff00;
+        }
+    }
+
+    @keyframes bounce {
+        0%,
+        20%,
+        50%,
+        80%,
+        100% {
+            transform: translateY(0);
+        }
+        40% {
+            transform: translateY(-10px);
+        }
+        60% {
+            transform: translateY(-5px);
+        }
+    }
+        .base {
+            width: 70%;
+            height: 10px;
+            background-color: #444;
+            position: absolute;
+            bottom: -10px;
+            left: 15%;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .main-content {
+            display: flex;
+            flex-direction: column; /* Mudar para coluna para melhor disposição */
+            align-items: center; /* Centraliza verticalmente */
+            margin: 50px; /* Margem para separar do topo e do rodapé */
+        }
+
+        /* Estilo para o botão de voltar */
+        .back-button {
+            position: fixed; /* Fixa o botão na tela */
+            bottom: 20px; /* Distância do fundo */
+            left: 20px; /* Distância da esquerda */
+            background-color: #c00010; /* Cor de fundo do botão */
+            color: white; /* Cor do texto */
+            border: none; /* Sem borda */
+            border-radius: 5px; /* Bordas arredondadas */
+            padding: 10px; /* Padding interno */
+            cursor: pointer; /* Cursor de mão */
+            font-size: 1.5rem; /* Tamanho da fonte */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Sombra */
+            z-index: 1000; /* Fixa o botão acima de outros elementos */
+        }
+
+        .back-button:hover {
+            background-color: #003b8d; /* Cor de fundo ao passar o mouse */
+        }
+
+    </style>
 </head>
-<body>
-    <header>
 
-        <nav>
-          <a class="logo" href="/"> Programando o Futuro</a>
-  
-          <div class="mobile-menu">
-            <div class="line1"></div>
-            <div class="line2"></div>
-            <div class="line3"></div>
-          </div>
-  
-          <ul class="nav-list">
-            <li><a href="projetos2.html">Voltar</a></li>
-            <li><a href="../index.html">Início</a></li>
-            <li><a href="contato.html">Quem Somos</a></li>
-            <li><a href="inscreva.html">Inscreva-se</a></li>
-            <li><a href="admin.html">Admin</a></li>
-          </ul>
-  
+<body>
+
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand mx-auto" href="/">PROGRAMANDO O FUTURO</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                    </ul>
+                </div>
+            </div>
         </nav>
-  
     </header>
-      
-      <div class="centro">
-          <h1>Introdução a Lógica de Programação</h1><br>
-          <p style="font-family: Montserrat, sans-serif;">Na nossa <b>primeira oficina de tecnologia</b>, vamos explorar a lógica de programação, 
-            que é fundamental para ensinar computadores a realizar tarefas. Pense nisso como dar instruções detalhadas a um amigo para preparar um bolo: 
-            você precisa ser claro e seguir uma ordem lógica, como "misture os ingredientes antes de assar". Na programação, você organiza comandos de forma 
-            semelhante para que o computador entenda e execute as ações desejadas. Em nossa oficina, você aprenderá a criar esse roteiro passo a passo, 
-            transformando suas ideias em resultados práticos e eficientes. 
-            Em resumo, a lógica de programação é a linguagem que conecta suas ideias ao mundo digital, e nós vamos praticar isso juntos.</p><br><br>
-            <br><br>
-      
+
+    <button class="back-button" onclick="history.back()">
+        <i class="fas fa-arrow-left"></i>
+    </button>
+
+    <div class="main-content">
+        <div class="content">
+            <h1>Lógica de Programação</h1>
+            <p>
+                Estamos animados para anunciar que realizaremos uma oficina de introdução à programação! 
+                Nesta oficina, os participantes terão a oportunidade de aprender os conceitos fundamentais da lógica de 
+                programação e como aplicá-los para resolver problemas práticos. Vamos explorar tópicos como estruturas de 
+                controle, variáveis, e algoritmos, utilizando uma linguagem de programação acessível e divertida. 
+                Ao final da oficina, todos estarão 
+                equipados com as habilidades básicas necessárias para iniciar sua jornada no mundo da programação.
+            </p>
         </div>
 
-    <footer class="footer-distributed">
-      <div class="footer-left">
-        <h3><span>Programando o Futuro</span></h3>
+        <!-- Simulação do Computador -->
+        <div>
+            <h2>Usaremos nas oficinas a Linguagem C</h2> <!-- Título acima da animação -->
+            <div class="computer">
+                <div class="screen">
+                    <div class="code">
+                        //Bem-vindo(a)!<br>
+                        <span>#include &lt;stdio.h&gt;</span><br>
+                        <span>int main() {</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span>printf("Hello, World!\\n");</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span>return 0;</span><br>
+                        <span>}</span><br>
+                    </div>
+                </div>
+                <div class="base"></div>
+            </div>
+        </div>
+    </div>
 
-        <p class="footer-links">
-
-            <a href="index.html">Início</a>
-            
-            <a href="projetos.html">Projetos</a>
-            |
-            <a href="contato.html">Contato</a>
-            |
-            <a href="inscreva.html">Inscreva-se</a>
-
-        </p>
-      </div>
-      
-      <div class="footer-center">
-          <div>
-              <i class="fa fa-map-marker"></i>
-              <p><span>Instituto Federal de Educação, Ciência e Tecnologia de São Paulo
-              </span>
-              IFSP Câmpus Campinas</p>
-          </div>
-
-          <div>
-              <i class="fa fa-envelope"></i>
-              <p><a href="programando_futuro@gmail.com">programando_futuro@gmail.com</a></p>
-          </div>
-      </div>
-
-      <div class="footer-right">
-          <p class="footer-company-about">
-              <span>Sobre Nós</span>
-              <h>Somos alunos do 3° ano do Ensino Médio Integrado ao Técnico 
-                de Informática do IFSP Campinas. Este trabalho é desenvolvido para a matéria de Projeto Integrador III.</h>
-          </p>
-      </div>
+    <footer>
+        <div class="container text-center">
+            <div class="row">
+                <div class="col-md-4">
+                    <p style="font-size: 1rem;">Programando o Futuro</p>
+                    <p style="font-size: 1rem;">
+                        <a href="../index.html" class="footer-link">Início</a> |
+                        <a href="../p/projetos2.html" class="footer-link">Projetos</a> |
+                        <a href="../p/contato.html" class="footer-link">Quem Somos</a> |
+                        <a href="../p/inscreva.html" class="footer-link">Inscreva-se</a>
+                    </p>
+                </div>
+                <div class="col-md-4">
+                    <p style="font-size: 1rem;">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <a href="https://maps.app.goo.gl/AYAeHXpnrSXAF6YH9" class="footer-link">IFSP Câmpus Campinas</a>
+                    </p>
+                    <p style="font-size: 1rem;">
+                        <i class="fas fa-envelope"></i> programando_futuro@gmail.com
+                    </p>
+                </div>
+                <div class="col-md-4">
+                    <p style="font-size: 1rem;">Sobre Nós</p>
+                    <p style="font-size: 1rem;">
+                        Somos alunos do Ensino Médio Integrado ao Técnico de Informática do IFSP Campinas. Este trabalho é desenvolvido para a matéria de Projeto Integrador IV.
+                    </p>
+                </div>
+            </div>
+        </div>
     </footer>
-    <script src="../js/mobile-navbar.js"></script>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-J1fU8jaTzogkkAV2P1Rjjbbdi1bP4ZcR/z0/LWkXQg5yzQ3m8Q9lmHtlVfJpZlqE" crossorigin="anonymous"></script>
 </body>
+
 </html>

@@ -1,104 +1,223 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Programando o Futuro</title>
+    <title>Introdução ao Arduino</title>
 
-    <link rel="stylesheet" href="../css/style.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="../css/slide.css" />
+    <style>
+        /* Adicionando imagem de fundo */
+        body {
+            background-color: #333;
+            color: white;
+            font-family: 'Poppins', sans-serif;
+        }
 
-    <link rel="stylesheet" href="../css/estilebas.css" />
+        .content {
+            padding: 30px;
+            text-align: justify;
+            border-radius: 15px;
+            max-width: 600px;
+            margin: 50px auto;
+        }
 
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+        h1 {
+            margin-bottom: 20px;
+            font-weight: 600;
+            font-size: 2.5rem;
+            text-align: center;
+            color: #e0e0e0;
+        }
 
-    <link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
+        p {
+            font-size: 1.125rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            color: #fff;
+        }
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">  
+        footer {
+            background-color: #004aad;
+            color: white;
+            padding: 2rem 0;
+        }
 
-    <script src="../js/slide.js" defer></script>
+        .navbar {
+            background-color: #004aad;
+        }
+
+        .footer-link {
+            color: white;
+            text-decoration: none;
+        }
+
+        .icon-container {
+            display: flex;
+            flex-wrap: wrap; /* Permite que os ícones se movam para a próxima linha se necessário */
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .icon-item {
+            text-align: center;
+            margin: 10px; /* Ajustando o espaço entre os ícones */
+            color: #fff;
+            flex: 1 0 150px; /* Permite que os itens se ajustem para 150px de largura mínima */
+        }
+
+        .icon-item i {
+            font-size: 3rem; /* Aumentando o tamanho dos ícones */
+            margin-bottom: 10px;
+        }
+
+        /* Cores dos ícones */
+        .icon-lightbulb {
+            color: yellow;
+        }
+
+        .icon-brain {
+            color: #ff8c00;
+        }
+
+        .icon-tools {
+            color: #32cd32;
+        }
+
+        .icon-plug {
+            color: #1e90ff;
+        }
+
+        .icon-circuit {
+            color: #ff1493; /* Cor rosa para o ícone de circuito */
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem; /* Reduzindo o tamanho do título em telas menores */
+            }
+
+            p {
+                font-size: 1rem; /* Reduzindo o tamanho do texto em telas menores */
+            }
+
+            .icon-item i {
+                font-size: 2rem; /* Diminuindo o tamanho dos ícones em telas menores */
+            }
+        }
+
+        @media (max-width: 576px) {
+            .icon-item {
+                flex: 1 0 100%; /* Os ícones ocupam 100% da largura em telas muito pequenas */
+            }
+        }
+
+        .back-button {
+            position: fixed; /* Fixa o botão na tela */
+            bottom: 20px; /* Distância do fundo */
+            left: 20px; /* Distância da esquerda */
+            background-color: #c00010; /* Cor de fundo do botão */
+            color: white; /* Cor do texto */
+            border: none; /* Sem borda */
+            border-radius: 5px; /* Bordas arredondadas */
+            padding: 10px; /* Padding interno */
+            cursor: pointer; /* Cursor de mão */
+            font-size: 1.5rem; /* Tamanho da fonte */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Sombra */
+            z-index: 1000; /* Fixa o botão acima de outros elementos */
+        }
+    </style>
 </head>
+
 <body>
+
     <header>
-
-        <nav>
-          <a class="logo" href="/"> Programando o Futuro</a>
-  
-          <div class="mobile-menu">
-            <div class="line1"></div>
-            <div class="line2"></div>
-            <div class="line3"></div>
-          </div>
-  
-          <ul class="nav-list">
-            <li><a href="projetos2.html">Voltar</a></li>
-            <li><a href="../index.html">Início</a></li>
-            <li><a href="contato.html">Quem Somos</a></li>
-            <li><a href="inscreva.html">Inscreva-se</a></li>
-            <li><a href="admin.html">Admin</a></li>
-          </ul>
-  
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand mx-auto" href="/">PROGRAMANDO O FUTURO</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                </div>
+            </div>
         </nav>
-  
-      </header>
-      
-      <div class="centro">
+    </header>
+
+    <button class="back-button" onclick="history.back()">
+        <i class="fas fa-arrow-left"></i>
+    </button>
+
+    <div class="content">
         <h1>Introdução ao Arduino</h1>
-        <br>
-        <p style="font-family: Montserrat, sans-serif;">Na nossa<b> segunda oficina de tecnologia</b>, vamos explorar o Arduino, um dispositivo eletrônico que atua como o "cérebro" para projetos criativos. 
-          Ideal tanto para iniciantes quanto para especialistas, o Arduino funciona como um kit de ferramentas para ideias eletrônicas, permitindo controlar luzes, motores e sensores. 
-          Sua simplicidade facilita a criação de projetos que vão desde simples pisca-piscas até sistemas complexos, como robôs e automação residencial. 
-          Com uma comunidade ativa e recursos online, como tutoriais e uma linguagem de programação acessível, 
-          o Arduino é uma ferramenta poderosa para transformar suas ideias criativas em projetos eletrônicos reais. 
-          Em nossa oficina, você terá a oportunidade de explorar essa interseção entre imaginação e tecnologia e criar projetos eletrônicos tangíveis.</p>
-          <br><br>
-      
-      </div>
-
-    <footer class="footer-distributed">
-      <div class="footer-left">
-        <h3><span>Programando o Futuro</span></h3>
-
-        <p class="footer-links">
-            <a href="index.html">Início</a>
-            
-            <a href="projetos.html">Projetos</a>
-            |
-            <a href="contato.html">Contato</a>
-            |
-            <a href="inscreva.html">Inscreva-se</a>
-
+        <p>
+            Estamos empolgados em anunciar que faremos uma segunda oficina, esta é sobre Arduino! Escolhemos o Arduino por ser uma ferramenta versátil e dinâmica, que permite unir programação com conceitos práticos de eletrônica. Nesta oficina, vamos introduzir o que é o Arduino, seu funcionamento e como ele pode ser usado para criar projetos eletrônicos interativos. 
         </p>
-      </div>
-      
-      <div class="footer-center">
-          <div>
-              <i class="fa fa-map-marker"></i>
-              <p><span>Instituto Federal de Educação, Ciência e Tecnologia de São Paulo
-              </span>
-              IFSP Câmpus Campinas</p>
-          </div>
+        
+        <br>
+        <!-- Seção de Ícones -->
+        <div class="icon-container">
+            <div class="icon-item">
+                <i class="fas fa-lightbulb icon-lightbulb"></i> <!-- Ícone de Criatividade -->
+                <p>Uso da criatividade</p>
+            </div>
+            <div class="icon-item">
+                <i class="fas fa-brain icon-brain"></i> <!-- Ícone de Pensamento -->
+                <p>Pensamento Lógico</p>
+            </div>
+            <div class="icon-item">
+                <i class="fas fa-tools icon-tools"></i> <!-- Ícone de Novas Habilidades -->
+                <p>Novas Habilidades</p>
+            </div>
+            <div class="icon-item">
+                <i class="fas fa-plug icon-plug"></i> <!-- Ícone de Circuitos Elétricos -->
+                <p>Circuitos Elétricos</p>
+            </div>
+            <div class="icon-item">
+                <i class="fas fa-microchip icon-circuit"></i> <!-- Ícone de Circuito Eletrônico -->
+                <p>Microcontroladores</p>
+            </div>
+        </div>
+    </div>
 
-          <div>
-              <i class="fa fa-envelope"></i>
-              <p><a href="programando_futuro@gmail.com">programando_futuro@gmail.com</a></p>
-          </div>
-      </div>
-
-      <div class="footer-right">
-          <p class="footer-company-about">
-              <span>Sobre Nós</span>
-              <h>Somos alunos do 3° ano do Ensino Médio Integrado ao Técnico 
-                de Informática do IFSP Campinas. Este trabalho é desenvolvido para a matéria de Projeto Integrador III.</h>
-          </p>
-      </div>
+    <footer>
+        <div class="container text-center">
+            <div class="row">
+                <div class="col-md-4">
+                    <p style="font-size: 1rem;">Programando o Futuro</p>
+                    <p style="font-size: 1rem;">
+                        <a href="../index.html" class="footer-link">Início</a> |
+                        <a href="../p/projetos2.html" class="footer-link">Projetos</a> |
+                        <a href="../p/contato.html" class="footer-link">Quem Somos</a> |
+                        <a href="../p/inscreva.html" class="footer-link">Inscreva-se</a>
+                    </p>
+                </div>
+                <div class="col-md-4">
+                    <p style="font-size: 1rem;">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <a href="https://maps.app.goo.gl/AYAeHXpnrSXAF6YH9" class="footer-link">IFSP Câmpus Campinas</a>
+                    </p>
+                    <p style="font-size: 1rem;">
+                        <i class="fas fa-envelope"></i> programando_futuro@gmail.com
+                    </p>
+                </div>
+                <div class="col-md-4">
+                    <p style="font-size: 1rem;">Sobre Nós</p>
+                    <p style="font-size: 1rem;">
+                        Somos alunos do Ensino Médio Integrado ao Técnico de Informática do IFSP Campinas. Este trabalho é desenvolvido para a matéria de Projeto Integrador IV.
+                    </p>
+                </div>
+            </div>
+        </div>
     </footer>
-    <script src="../js/mobile-navbar.js"></script>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-J1fU8jaTzogkkAV2P1Rjjbbdi1bP4ZcR/z0/LWkXQg5yzQ3m8Q9lmHtlVfJpZlqE" crossorigin="anonymous"></script>
 </body>
+
 </html>
